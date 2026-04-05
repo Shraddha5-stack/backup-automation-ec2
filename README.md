@@ -28,11 +28,23 @@ This project provides a fully automated backup system for AWS EC2 instances runn
 
 ## Project Structure
 
+```text
+backup-project/
+├── script/
+│   └── backup.sh        
+├── config/
+│   └── settings.conf    
+├── logs/
+│   ├── backup.log       
+│   └── cron.log       
+└── backups/             
+```
+
 
 ## Configuration Setup
 
 Update configuration file with project paths and retention values:
-
+```bash
 PROJECT_NAME="MyEC2Backup"
 PROJECT_DIR="/home/ubuntu/my-project"
 BACKUP_DIR="/home/ubuntu/backups"
@@ -43,6 +55,8 @@ WEEKLY_RETENTION=4
 MONTHLY_RETENTION=3
 WEBHOOK_URL="https://webhook.site/your-unique-url"
 NOTIFY=true
+```
+
 
 
 ## Backup Script Execution
