@@ -29,18 +29,19 @@ This project provides a fully automated backup system for AWS EC2 instances runn
 ## Project Structure
 backup-project/
 ├── script/
-│ └── backup.sh # Main backup script
+│ └── backup.sh 
 ├── config/
-│ └── settings.conf # Configuration file
+│ └── settings.conf 
 ├── logs/
-│ ├── backup.log # Backup activity log
-│ └── cron.log # Cron execution log
-└── backups/ # Local backup storage
+│ ├── backup.log
+│ └── cron.log 
+└── backups/ 
 
 
 ## Configuration Setup
 
 Update `config/settings.conf` with your environment variables:
+
 PROJECT_NAME="MyEC2Backup"
 PROJECT_DIR="/home/ubuntu/my-project"
 BACKUP_DIR="/home/ubuntu/backups"
@@ -82,6 +83,7 @@ crontab -e
 
 
 Add the following line:
+
 0 2 * * * /home/ubuntu/backup-project/script/backup.sh >> /home/ubuntu/backup-project/logs/cron.log 2>&1
 
 
@@ -91,11 +93,12 @@ crontab -l
 
 ## Logs and Monitoring
 
-- **Backup logs:** `logs/backup.log`  
-- **Cron execution logs:** `logs/cron.log`  
-- Optional webhook notifications can provide real-time backup status.  
+- Backup logs: `logs/backup.log`  
+- Cron execution logs: `logs/cron.log`  
+- webhook notifications can provide real-time backup status.  
 
 View logs:
+
 tail -f ~/backup-project/logs/backup.log
 
 
