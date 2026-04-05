@@ -30,32 +30,42 @@ This project provides a fully automated backup system for AWS EC2 instances runn
 backup-project/
 ├── script/
 │ └── backup.sh 
+
 ├── config/
 │ └── settings.conf 
+
 ├── logs/
 │ ├── backup.log
-│ └── cron.log 
+│ └── cron.log
+
 └── backups/ 
 
 
 ## Configuration Setup
 
-Update `config/settings.conf` with your environment variables:
+Update configuration file with project paths and retention values:
 
 PROJECT_NAME="MyEC2Backup"
+
 PROJECT_DIR="/home/ubuntu/my-project"
+
 BACKUP_DIR="/home/ubuntu/backups"
+
 REMOTE_NAME="drive"
+
 REMOTE_FOLDER="EC2Backups"
+
 DAILY_RETENTION=7
+
 WEEKLY_RETENTION=4
+
 MONTHLY_RETENTION=3
+
 WEBHOOK_URL="https://webhook.site/your-unique-url
 "
+
 NOTIFY=true
 
-
-Ensure all directories exist and the script has execution permissions.
 
 ## Backup Script Execution
 
